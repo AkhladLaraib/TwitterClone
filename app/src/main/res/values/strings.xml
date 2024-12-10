@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TwitterClone</string>
+    <string name="enter_the_username">Enter the username to signup...</string>
+    <string name="enter_the_password">Enter the password to signup...</string>
+    <string name="signup">SIGNUP</string>
+    <string name="login">LOGIN</string>
+    <string name="enter_the_password_to_login">Enter the password to login...</string>
+    <string name="enter_the_username_to_login">Enter the username to login...</string>
+    <string name="enter_the_email_to_signup">Enter the email to signup...</string>
+    <string name="logout">LOGOUT</string>
+</resources>
