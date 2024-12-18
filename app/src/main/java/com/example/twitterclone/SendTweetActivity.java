@@ -40,6 +40,17 @@ public class SendTweetActivity extends AppCompatActivity implements View.OnClick
 
     public void sendTweets(View view) {
 
+        String tweetContent = edtSendTweets.getText().toString().trim();
+
+        if (tweetContent.isEmpty()) {
+            FancyToast.makeText(SendTweetActivity.this,
+                    "Please write something before sending a tweet.",
+                    FancyToast.LENGTH_SHORT,
+                    FancyToast.WARNING,
+                    true).show();
+            return;
+        }
+
         ParseObject parseObject = new ParseObject("MyTweet");
         parseObject.put("tweet", edtSendTweets.getText().toString());
         parseObject.put("user", ParseUser.getCurrentUser().getUsername());
