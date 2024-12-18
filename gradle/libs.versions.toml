@@ -1,6 +1,7 @@
 [versions]
 agp = "8.7.3"
 fancytoast = "2.0.2"
+githubParse = "4.2.2"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -23,7 +24,9 @@ activity = { group = "androidx.activity", name = "activity", version.ref = "acti
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 parse = { module = "com.github.parse-community.Parse-SDK-Android:parse", version.ref = "parse" }
 parse-android = { module = "com.parse:parse-android", version.ref = "parseAndroid" }
+parse-v422 = { module = "com.github.parse-community.Parse-SDK-Android:parse", version.ref = "githubParse" }
 parse-v430 = { module = "com.github.parse-community.Parse-SDK-Android:parse", version.ref = "parseVersion" }
+twitter = { module = "com.github.parse-community.Parse-SDK-Android:twitter", version.ref = "parse" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

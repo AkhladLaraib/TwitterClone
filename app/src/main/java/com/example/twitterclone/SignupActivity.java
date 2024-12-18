@@ -73,9 +73,6 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 user.signUpInBackground(e -> {
                     if (e == null) {
 
-                        FancyToast.makeText(SignupActivity.this, user.getUsername() +
-                                        " signed up successfully", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS,
-                                true).show();
                         transitionToApp();
                     } else {
 

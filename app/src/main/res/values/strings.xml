@@ -8,4 +8,7 @@
     <string name="enter_the_username_to_login">Enter the username to login...</string>
     <string name="enter_the_email_to_signup">Enter the email to signup...</string>
     <string name="logout">LOGOUT</string>
+    <string name="back4app_id">EtgkvjXgQMpCQK2He8o1y5kOoXjLXDWh0s5ELT30</string>
+    <string name="back4app_client_key">RMLTYJPzHMHMVP81WSGaQfjTDmAOAhDN89iOPHzR</string>
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
 </resources>

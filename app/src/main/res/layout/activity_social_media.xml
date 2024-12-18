@@ -7,16 +7,23 @@
     android:layout_height="match_parent"
     tools:context=".SocialMediaActivity">
 
-    <include
-        layout="@layout/my_toolbar" />
+    <include layout="@layout/my_toolbar" />
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/appBarLayout"
-        android:layout_marginTop="64dp" />
+        android:layout_marginTop="125dp"
+        android:layout_marginBottom="91dp"
+        android:alpha=".4"
+        app:srcCompat="@drawable/twit" />
 
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="64dp"
+        android:choiceMode="multipleChoice"/>
 
 
 </RelativeLayout>

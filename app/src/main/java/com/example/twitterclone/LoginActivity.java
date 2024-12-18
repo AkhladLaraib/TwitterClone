@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             if (edtLoginUsername.getText().toString().equals("") ||
                     edtLoginPassword.getText().toString().equals("")) {
 
-                FancyToast.makeText(LoginActivity.this, "Email and Password required", FancyToast.LENGTH_LONG,
+                FancyToast.makeText(LoginActivity.this, "Username and Password required", FancyToast.LENGTH_LONG,
                         FancyToast.INFO, true).show();
             } else {
 
@@ -62,9 +62,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                             if (user != null && e == null) {
 
-                                FancyToast.makeText(LoginActivity.this, user.getUsername()
-                                                + " logged in successfully", FancyToast.LENGTH_LONG,
-                                        FancyToast.SUCCESS, true).show();
                                 transitionToApp();
                             } else {
 
