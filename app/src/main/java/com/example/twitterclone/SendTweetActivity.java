@@ -1,6 +1,7 @@
 package com.example.twitterclone;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,6 +9,8 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
 
+import androidx.activity.OnBackPressedCallback;
+import androidx.activity.OnBackPressedDispatcher;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.parse.ParseObject;
@@ -21,7 +24,6 @@ import java.util.HashMap;
 public class SendTweetActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText edtSendTweets;
-    private Button btnOtherTweets;
     private GridView gridViewUserTweets;
 
     @Override
@@ -31,10 +33,21 @@ public class SendTweetActivity extends AppCompatActivity implements View.OnClick
 
         edtSendTweets = findViewById(R.id.edtSendTweets);
 
-        btnOtherTweets = findViewById(R.id.btnOtherTweets);
+        Button btnOtherTweets = findViewById(R.id.btnOtherTweets);
         gridViewUserTweets = findViewById(R.id.gridViewUserTweets);
 
         btnOtherTweets.setOnClickListener(SendTweetActivity.this);
+
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+
+                Intent intent = new Intent(SendTweetActivity.this, SocialMediaActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        };
+        getOnBackPressedDispatcher().addCallback(this, callback);
 
     }
 
