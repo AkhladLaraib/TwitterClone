@@ -12,16 +12,20 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckedTextView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SocialMediaActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -75,6 +79,13 @@ public class SocialMediaActivity extends AppCompatActivity implements AdapterVie
                             listView.setVisibility(View.VISIBLE);
                         }
 
+                        for (String twitterUsers : tUsers) {
+                            if (ParseUser.getCurrentUser().getList("fanOf") != null) {
+                                listView.setItemChecked(tUsers.indexOf(twitterUsers),
+                                        ParseUser.getCurrentUser().getList("fanOf").contains(twitterUsers));
+                            }
+                        }
+
                     }
                 } else {
                     // Handle error
@@ -124,11 +135,28 @@ public class SocialMediaActivity extends AppCompatActivity implements AdapterVie
         if (checkedTextView.isChecked()){
             FancyToast.makeText(SocialMediaActivity.this, tUsers.get(position) + " is now followed!!!",
                     FancyToast.LENGTH_SHORT, FancyToast.INFO, true).show();
+            ParseUser.getCurrentUser().add("fanOf", tUsers.get(position));
         } else {
 
             FancyToast.makeText(SocialMediaActivity.this, tUsers.get(position) + " is no longer followed!!!",
                     FancyToast.LENGTH_SHORT, FancyToast.INFO, true).show();
+
+            ParseUser.getCurrentUser().getList("fanOf").remove(tUsers.get(position));
+            List currentUserFanOfList = ParseUser.getCurrentUser().getList("fanOf");
+            ParseUser.getCurrentUser().remove("fanOf");
+            ParseUser.getCurrentUser().put("fanOf", currentUserFanOfList);
+
         }
+
+        ParseUser.getCurrentUser().saveInBackground(e -> {
+
+            if (e == null) {
+
+                FancyToast.makeText(SocialMediaActivity.this, "Saved", FancyToast.LENGTH_SHORT,
+                        FancyToast.SUCCESS, true).show();
+            }
+
+        });
     }
 }
 
