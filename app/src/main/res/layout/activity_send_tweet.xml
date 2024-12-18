@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9B7CB9EB"
+    android:orientation="vertical"
+    tools:context=".SendTweetActivity">
+
+    <include layout="@layout/my_toolbar" />
+
+    <EditText
+        android:id="@+id/edtSendTweets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="@string/send_a_tweet"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnSendTweets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="80dp"
+        android:backgroundTint="#3F51B5"
+        android:onClick="sendTweets"
+        android:text="@string/send_tweet"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btnOtherTweets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="60dp"
+        android:backgroundTint="#3F51B5"
+        android:text="@string/tweets"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="28sp" />
+
+    <GridView
+        android:id="@+id/gridViewUserTweets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="28dp" />
+
+
+</LinearLayout>

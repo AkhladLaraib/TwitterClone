@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -123,6 +124,12 @@ public class SocialMediaActivity extends AppCompatActivity implements AdapterVie
                 startActivity(intent);
                 finish();
             });
+        }
+        if (item.getItemId() == R.id.sendTweetitem) {
+
+            Intent intent = new Intent(SocialMediaActivity.this, SendTweetActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

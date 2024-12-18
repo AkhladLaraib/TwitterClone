@@ -11,4 +11,7 @@
     <string name="back4app_id">EtgkvjXgQMpCQK2He8o1y5kOoXjLXDWh0s5ELT30</string>
     <string name="back4app_client_key">RMLTYJPzHMHMVP81WSGaQfjTDmAOAhDN89iOPHzR</string>
     <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+    <string name="send_tweet">SEND TWEET</string>
+    <string name="tweets">TWEETS</string>
+    <string name="send_a_tweet">Send a tweet...</string>
 </resources>
